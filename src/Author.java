@@ -2,31 +2,35 @@
  * Класс создает объект "Автор". Содержит в себе информацию об авторе и методы для управления ими.
  */
 public class Author {
-    private String authorFirstName;
-    private String authorLastName;
+    private String firstName;
+    private String lastName;
 
-    public void setAuthorFirstName(String authorFirstName) {
-        this.authorFirstName = authorFirstName;
+    public Author() {
     }
 
-    public void setAuthorLastName(String authorLastName) {
-        this.authorLastName = authorLastName;
+    public Author(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    private String getAuthorFirstName() {
-        return authorFirstName;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    private String getAuthorLastName() {
-        return authorLastName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    /**
-     * Метод выводит информацию об авторе.
-     *
-     * @return возвращает Имя и фамилию автора.
-     */
-    public String getAuthorNameInfo() {
-        return getAuthorFirstName() + " " + getAuthorLastName();
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "Автор - " + firstName + " " + lastName;
     }
 }

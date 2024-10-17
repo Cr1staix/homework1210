@@ -3,12 +3,21 @@
  * и методы для управления ими.
  */
 public class Book {
-    private String bookName;
+    private String title;
     private Author author;
-    int yearPublication;
+    private int yearPublication;
 
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public Book() {
+    }
+
+    public Book(String title, Author author, int yearPublication) {
+        this.title = title;
+        this.yearPublication = yearPublication;
+        this.author = author;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setAuthor(Author author) {
@@ -23,20 +32,16 @@ public class Book {
         }
     }
 
-    private String getBookName() {
-        return bookName;
+    public String getTitle() {
+        return title;
     }
 
-    private int getYearPublication() {
+    public int getYearPublication() {
         return yearPublication;
     }
 
-    /**
-     * Метод выводит информацию о книге.
-     *
-     * @return возвращает значения полей содержащих информацию о книге.
-     */
-    public String getBookInfo() {
-        return "Книга - " + getBookName() + "/ Автор " + author.getAuthorNameInfo() + "/ " + getYearPublication() + " года издания.";
+    @Override
+    public String toString() {
+        return "Книга " + title + " / " + author.toString() + " / Год публикации " + yearPublication;
     }
 }
